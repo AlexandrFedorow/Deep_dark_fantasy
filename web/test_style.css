@@ -1,0 +1,110 @@
+.shap{
+  padding: 20px;
+  left: 0; top: 0; /* Левый нижний угол */
+  width: 100%;
+  background-color: #FFFFFF;
+  position: fixed;
+  box-shadow: 0px 0px 5px 0px #000000;
+}
+
+.bok{
+  position: fixed;
+  left: 0;
+  top: 50px;
+  width: 30%;
+  height: 100%;
+  background-color: #f7f7f7;
+  overflow: scroll;
+  border: 1px solid;
+  /* исправить бичевский скролинг */
+}
+.block{
+  width: 60%;
+  height: 80px;
+  margin-left: 10px;
+  margin-right: auto;
+  border-radius: 10px;
+  background-color: #b8b8b8;
+  min-width: 150px;
+}
+.ico{
+  width: 40px;
+  height: 40px;
+  background-image: url('doma.png');
+
+}
+
+.text{
+  width: 50px;
+  padding: 10px;
+  /*background-color: red;*/
+
+}
+
+.light{
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  background-color: blue;
+}
+
+.cost2{
+  height: 20px;
+}
+
+.cost{
+  height: 40px;
+}
+table{
+  border: none;
+  margin: auto;
+}
+
+.l1{
+  width: 30%;
+  float: left;
+  text-align: center;
+}
+
+.l2{
+  width: 95%;
+  text-align: center;
+}
+
+.content{
+    position: fixed;
+    right: 0;
+    margin-top: 54px;
+    margin-bottom: 50px;
+    width: 70%;
+    height: 100%;
+    background-color: #FFFFFF;
+    overflow: scroll;
+    text-align: center;
+    bottom: 5px;
+    /* надо накинуть скролинг */
+}
+
+.niz{
+  position: fixed; /* Фиксированное положение */
+  left: 0; bottom: 0; /* Левый нижний угол */
+  padding: 20px; /* Поля вокруг текста */
+  background: #FFFFFF; /* Цвет фона */
+  width: 100%; /* Ширина слоя */
+  box-shadow: 0px -7px 10px -9px #000000
+}
+.buttons{
+  width: 100%;
+  text-align: center;
+}
+.nb{
+  width: 30%;
+}
+.plot{
+  width: 80%;
+  height: 60%;
+  max-width: 576px;
+}
+#plot1{
+  margin-top: 90px;
+}
