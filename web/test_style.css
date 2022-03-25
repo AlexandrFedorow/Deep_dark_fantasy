@@ -91,7 +91,7 @@ table{
 .niz{
   position: fixed; /* Фиксированное положение */
   left: 0; bottom: 0; /* Левый нижний угол */
-  padding: 20px; /* Поля вокруг текста */
+  padding: 10px; /* Поля вокруг текста */
   background: #838e96; /* Цвет фона */
   width: 100%; /* Ширина слоя */
   box-shadow: 0px -7px 10px -9px #000000
