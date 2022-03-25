@@ -17,6 +17,10 @@ function PopUpHide(){
     $("#popup1").hide();
 }
 
+function PopUpExit(){
+    $("#popup1").hide();
+}
+
 
 function check_device_number(){
     s_number = document.getElementById('s-number').value;
