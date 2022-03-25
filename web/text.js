@@ -2,7 +2,7 @@ async function bb(){
     await eel.call();
 }
 
-function bebra(){
+function choose_devace(){
   //alert('gg');
   var a = document.getElementById('0');
   var b = document.getElementById('l2');
