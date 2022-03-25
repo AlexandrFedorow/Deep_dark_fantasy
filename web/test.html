@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <script src="eel.js"></script>
-    <script src="text.js"></script>
+
     <script src="http://code.jquery.com/jquery-2.0.2.min.js"></script>
     <link rel="stylesheet" type='text/css' href='test_style.css'>
 </head>
@@ -19,13 +19,13 @@
 
     <div class="bok" id="bok">
         <br>
-        <div class="block" onclick='choose_devace()'>
+        <div class="block" id='0' onclick='choose_devace(this)'>
           <div class="cost2"></div>
           <div class='cost'>
             <table>
               <tr>
                 <td><div class='ico'></div></td>
-                <td><div class="text" id='0'>bebra</div></td>
+                <td><div class="text" id='0t'>bebra</div></td>
                 <td><div class="light"></div></td>
               </tr>
             </table>
@@ -44,19 +44,19 @@
             <table>
               <tr>
                 <td>
-                  <div class='nb' id='1'>
+                  <div class='nb' id='1nb'>
                     <button class="b_down" onclick="PopUpShow()"><img src="add1.png"></button>
                   </div>
                 </td>
 
                 <td>
-                  <div class='nb' id='2'>
+                  <div class='nb' id='2nb'>
                     <button class="b_down"><img src="set1.png"></button>
                   </div>
                 </td>
 
                 <td>
-                  <div class='nb' id='2'>
+                  <div class='nb' id='2nb'>
                     <button class="b_down"><img src="ref1.png"></button>
                   </div>
                 </td>
@@ -73,7 +73,7 @@
       </div>
     </div>
 
-<script src="popup.js"></script>
+<script src="text.js"></script>
 </body>
 
 

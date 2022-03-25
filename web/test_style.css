@@ -26,6 +26,7 @@
   border-radius: 10px;
   background-color: #b8b8b8;
   min-width: 150px;
+  cursor: pointer;
 }
 .ico{
   width: 40px;
