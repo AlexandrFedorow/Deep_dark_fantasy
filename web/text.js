@@ -4,10 +4,12 @@ async function bb(){
 
 function bebra(){
   //alert('gg');
-  var a = document.getElementById('1');
+  var a = document.getElementById('0');
   var b = document.getElementById('l2');
 
   var textA = a.innerHTML;
   b.innerHTML = textA;
-};
+}
+
+
 //alert('gg')

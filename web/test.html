@@ -5,6 +5,7 @@
     <title>Title</title>
     <script src="eel.js"></script>
     <script src="text.js"></script>
+    <script src="http://code.jquery.com/jquery-2.0.2.min.js"></script>
     <link rel="stylesheet" type='text/css' href='test_style.css'>
 </head>
 <body>
@@ -24,7 +25,7 @@
             <table>
               <tr>
                 <td><div class='ico'></div></td>
-                <td><div class="text" id='1'>bebra</div></td>
+                <td><div class="text" id='0'>bebra</div></td>
                 <td><div class="light"></div></td>
               </tr>
             </table>
@@ -42,13 +43,37 @@
         <div class="buttons">
             <table>
               <tr>
-                <td><div class='nb' id='0'>+</div></td>
-                <td><div class='nb' id='2'>*</div></td>
-                <td><button onclick='bb()'>Update</button></td>
+                <td>
+                  <div class='nb' id='1'>
+                    <button class="b_down" onclick="PopUpShow()"><img src="add1.png"></button>
+                  </div>
+                </td>
+
+                <td>
+                  <div class='nb' id='2'>
+                    <button class="b_down"><img src="set1.png"></button>
+                  </div>
+                </td>
+
+                <td>
+                  <div class='nb' id='2'>
+                    <button class="b_down"><img src="ref1.png"></button>
+                  </div>
+                </td>
               </tr>
             </table>
         </div>
     </div>
+
+    <div class="b-popup" id="popup1">
+      <div class="b-popup-content">
+          <h4 class="zagl-popup"> Add new device </h4>
+          <input type="text" class="s-number" id="s-number" placeholder="S-number">
+          <button class='submit-button' onclick="PopUpHide()"> +Add </button>
+      </div>
+    </div>
+
+<script src="popup.js"></script>
 </body>
 
 
