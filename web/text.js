@@ -1,15 +1,18 @@
 
-var ctr = 0; // счетчик отвечает за количесто блоков
-    //Функция отображения PopUp
-function PopUpShow(){
+var ctr = -1; // счетчик отвечает за количесто блоков
+var device_name = '';
+
+
+
+function PopUpShow(){ //Функция отображения PopUp
     $("#popup1").show();
 }
 
 
     //Функция скрытия PopUp
 function PopUpHide(){
-    //check_device_number();
-    if (ctr > 0){
+    check_device_number();
+    if (ctr > -1){
         create_device();
     }
     ctr++;
@@ -23,10 +26,11 @@ function PopUpExit(){
 
 
 function check_device_number(){
-    s_number = document.getElementById('s-number').value;
+    var s_number = document.getElementById('s-number').value;
+    device_name = document.getElementById('name').value;
     //тут где-то должна быть проверка формы через python
     //проверка на заполненност и на соответствие бд
-    console.log(s_number);
+    //console.log(s_number);
 }
 
 
@@ -47,7 +51,7 @@ function create_device(){//походу запускать эту функцию
   var div4 = document.createElement('div');
   var div5 = document.createElement('div');
 
-  var text = document.createTextNode("jjj");
+  var text = document.createTextNode(device_name);
 
   div.appendChild(div1);
   div.appendChild(div2);
