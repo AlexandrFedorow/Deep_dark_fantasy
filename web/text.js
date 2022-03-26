@@ -10,10 +10,18 @@ function PopUpShow(){ //Функция отображения PopUp
 
 
     //Функция скрытия PopUp
-function PopUpHide(){
-    check_device_number();
+async function PopUpHide(){
     if (ctr > -1){
-        create_device();
+        var s_number = document.getElementById('s-number').value;
+        device_name = document.getElementById('name').value;
+        var check = await eel.call(device_name)();
+
+        if (check == 1){
+            create_device();
+        }
+        else{
+          ctr--;
+        }
     }
     ctr++;
 
@@ -26,8 +34,6 @@ function PopUpExit(){
 
 
 function check_device_number(){
-    var s_number = document.getElementById('s-number').value;
-    device_name = document.getElementById('name').value;
     //тут где-то должна быть проверка формы через python
     //проверка на заполненност и на соответствие бд
     //console.log(s_number);
@@ -79,10 +85,6 @@ function create_device(){//походу запускать эту функцию
   main.appendChild(br);
 }
 
-
-async function bb(){
-    await eel.call();
-}
 
 function choose_devace(obj){//эта функция для отображения информации о дивайсе
   var a = document.getElementById(obj.id+'t');
