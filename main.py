@@ -14,4 +14,4 @@ def call():
     print(data.decode('utf-8'))
 
 
-eel.start('mian.html', size=(1201, 800))
+eel.start('mian.html', size=(1200, 800))
