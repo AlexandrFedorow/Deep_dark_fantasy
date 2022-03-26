@@ -14,7 +14,7 @@ async function PopUpHide(){
     if (ctr > -1){
         var s_number = document.getElementById('s-number').value;
         device_name = document.getElementById('name').value;
-        var check = await eel.call(device_name)();
+        var check = await eel.call(s_number)();
 
         if (check == 1){
             create_device();
@@ -31,14 +31,6 @@ async function PopUpHide(){
 function PopUpExit(){
     $("#popup1").hide();
 }
-
-
-function check_device_number(){
-    //тут где-то должна быть проверка формы через python
-    //проверка на заполненност и на соответствие бд
-    //console.log(s_number);
-}
-
 
 function create_device(){//походу запускать эту функцию придеся через python
   var br = document.createElement('br');
