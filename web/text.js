@@ -20,6 +20,7 @@ async function PopUpHide(){
             create_device();
         }
         else{
+          alert('пососи')  // НЕ ЗАБУДЬ УБРАТЬ
           ctr--;
         }
     }
@@ -79,11 +80,36 @@ function create_device(){//походу запускать эту функцию
 
 
 function choose_devace(obj){//эта функция для отображения информации о дивайсе
+  refresh();
   var a = document.getElementById(obj.id+'t');
   var b = document.getElementById('l2');
 
   var textA = a.innerHTML;
   b.innerHTML = textA;
+
+  var plot1 = document.getElementById('plot1');
+  var plot2 = document.getElementById('plot2');
+  var plot3 = document.getElementById('plot3');
+
+  if(ctr != -1){
+    plot1.src = "static/plot2.png";
+    plot2.src = "static/plot1.png";
+    plot3.src = "static/plot2.png";
+  }
+}
+
+async function refresh(){
+
+    var plot1 = document.getElementById('plot1');
+    var plot2 = document.getElementById('plot2');
+    var plot3 = document.getElementById('plot3');
+
+    if(ctr != -1){
+      var a = await eel.get_data()();
+      plot1.src = "static/plot2.png";
+      plot2.src = "static/plot1.png";
+      plot3.src = "static/plot2.png";
+    }
 }
 
 PopUpHide();
