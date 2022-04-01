@@ -1,4 +1,5 @@
 import socket
+import time
 
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
@@ -26,8 +27,15 @@ while True:
     elif data_user1.decode('utf-8') == 'get':
         user2.send(data_user1)
     
-        data_user2 = user2.recv(1024)
-        user1.send(data_user2)
+        data_user21 = user2.recv(1024)
+        data_user22 = user2.recv(1024)
+        data_user23 = user2.recv(1024)
+
+        user1.send(data_user21)
+        time.sleep(0.01)
+        user1.send(data_user22)
+        time.sleep(0.01)
+        user1.send(data_user23)
 
     else:
         user1.send('0'.encode('utf-8'))

@@ -87,11 +87,13 @@ function choose_devace(obj){//эта функция для отображени�
   var textA = a.innerHTML;
   b.innerHTML = textA;
 
+  var plot0 = document.getElementById('plot0');
   var plot1 = document.getElementById('plot1');
   var plot2 = document.getElementById('plot2');
   var plot3 = document.getElementById('plot3');
 
   if(ctr != -1){
+    plot0.src = "static/plot0.png";
     plot1.src = "static/plot2.png";
     plot2.src = "static/plot1.png";
     plot3.src = "static/plot2.png";
@@ -99,16 +101,17 @@ function choose_devace(obj){//эта функция для отображени�
 }
 
 async function refresh(){
-
+    var plot0 = document.getElementById('plot0');
     var plot1 = document.getElementById('plot1');
     var plot2 = document.getElementById('plot2');
     var plot3 = document.getElementById('plot3');
 
-    if(ctr != -1){
+    if(ctr != 0){
       var a = await eel.get_data()();
-      plot1.src = "static/plot2.png";
-      plot2.src = "static/plot1.png";
-      plot3.src = "static/plot2.png";
+      plot0.src = "static/plot0.png";
+      plot1.src = "static/plot1.png";
+      plot2.src = "static/plot2.png";
+      plot3.src = "static/plot3.png";
     }
 }
 
