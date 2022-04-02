@@ -8,7 +8,7 @@ import config
 
 eel.init('web')
 clien = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-clien.connect(("127.0.0.1", 1265))
+clien.connect(("127.0.0.1", 1266))
 
 
 @eel.expose
@@ -23,6 +23,7 @@ def call(device_name):
         return 1
     else:
         return 0
+
 
 @eel.expose
 def get_data():
@@ -49,28 +50,29 @@ def get_data():
     del data3[len(data3) - 1]
     data3 = list(map(int, data3))
 
-    ss = pd.Series(int(datafile1.decode('utf-8')))  # график момента
+    ss = pd.Series(int(datafile1.decode('utf-8')), [''])  # график момента
     f2 = plt.figure(figsize=(6, 4))
-    ss.plot(kind='bar', title="Освещенность сейчас", ylabel='Интенсивность освещенности', width=0.1)
+    ss.plot(kind='bar', title="Освещенность сейчас", ylim=(None, 500), ylabel='Интенсивность освещенности', width=0.1)
     f2.savefig('web/static/plot0.png')
 
     s = pd.Series(data2, day) #график недели
     f1 = plt.figure(figsize=(6, 4))
-    s.plot(kind='bar', ylabel='Интенсивность освещенности', title="Освещенность на этой неделе")
+    s.plot(kind='bar', ylim=(None, 500), ylabel='Интенсивность освещенности', title="Освещенность на этой неделе")
+    plt.xticks(rotation=360)
     f1.savefig('web/static/plot1.png')
 
     fig, ax = plt.subplots()  #график зависимости по неделям
     ax.bar(x1, data2, width=0.4)
     ax.bar(x2, data3, width=0.4)
     ax.set_xticklabels(['пн']+day)
-    fig.title = 'Освещенность отностельно прошлой недели'
+    ax.set_title('Освещенность отностельно прошлой недели')
     fig.set_figwidth(6)  # ширина Figure
     fig.set_figheight(4)  # высота Figure
     fig.savefig('web/static/plot2.png')
 
     s = pd.Series(config.data) #график по часам
     f3 = plt.figure(figsize=(6, 4))
-    s.plot(xlabel='Время', ylabel='Интенсивность освещенности',  title="Освещенность за день", marker='o')
+    s.plot(xlabel='Время', ylim=(None, 500), ylabel='Интенсивность освещенности',  title="Освещенность за день", marker='o')
     f3.savefig('web/static/plot3.png')
     return 0
 
