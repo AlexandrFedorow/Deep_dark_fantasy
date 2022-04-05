@@ -74,6 +74,7 @@ def get_data():
     f3 = plt.figure(figsize=(6, 4))
     s.plot(xlabel='Время', ylim=(None, 500), ylabel='Интенсивность освещенности',  title="Освещенность за день", marker='o')
     f3.savefig('web/static/plot3.png')
+    
     return 0
 
 
