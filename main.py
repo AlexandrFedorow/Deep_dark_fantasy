@@ -8,7 +8,7 @@ import config
 
 eel.init('web')
 clien = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-clien.connect(("127.0.0.1", 1266))
+clien.connect(("127.0.0.1", 1265))
 
 
 @eel.expose
@@ -18,7 +18,7 @@ def call(device_name):
     clien.send(device_name.encode('utf-8'))#отправляем серийый номер
 
     check = clien.recv(1024)
-    print(check.decode('utf-8'))
+    #print(check.decode('utf-8'))
     if check.decode('utf-8') == '1':
         return 1
     else:
@@ -72,7 +72,7 @@ def get_data():
 
     s = pd.Series(config.data) #график по часам
     f3 = plt.figure(figsize=(6, 4))
-    s.plot(xlabel='Время', ylim=(None, 500), ylabel='Интенсивность освещенности',  title="Освещенность за день", marker='o')
+    s.plot(xlabel='Время', ylim=(None, 500), xlim=(0, 23), ylabel='Интенсивность освещенности',  title="Освещенность за день", marker='o')
     f3.savefig('web/static/plot3.png')
     
     return 0

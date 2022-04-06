@@ -3,7 +3,7 @@ import time
 
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-server.bind(("127.0.0.1", 1266))
+server.bind(("127.0.0.1", 1265))
 
 server.listen(2)
 user1, adres1 = server.accept()
@@ -14,7 +14,7 @@ line = file.read().split('\n')  # получаем все серийники (н
 
 while True:
     data_user1 = user1.recv(1024)   # принимаем режим
-    print(data_user1.decode('utf-8'))
+    #print(data_user1.decode('utf-8'))
 
     if data_user1.decode('utf-8') == 'check':
         device_name = user1.recv(1024)

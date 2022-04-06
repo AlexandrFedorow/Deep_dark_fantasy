@@ -81,6 +81,10 @@ function create_device(){//походу запускать эту функцию
 
 function choose_devace(obj){//эта функция для отображения информации о дивайсе
   refresh();
+  for(var i = 0; i<4; i++){
+    var b = document.getElementById('plot'+i);
+    b.style.opacity = 1;
+  }
   var a = document.getElementById(obj.id+'t');
   var b = document.getElementById('l2');
 
