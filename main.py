@@ -8,17 +8,17 @@ import config
 
 eel.init('web')
 clien = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-clien.connect(("127.0.0.1", 1265))
+clien.connect(("127.0.0.1", 1266))
 
 
 @eel.expose
 def call(device_name):
     clien.send('check'.encode('utf-8'))    #отправляем режим для проверки в базе
     time.sleep(0.01)
-    clien.send(device_name.encode('utf-8'))#отправляем серийый номер
+    clien.send(device_name.encode('utf-8'))#отправляем серийный номер
 
     check = clien.recv(1024)
-    #print(check.decode('utf-8'))
+
     if check.decode('utf-8') == '1':
         return 1
     else:
@@ -27,7 +27,7 @@ def call(device_name):
 
 @eel.expose
 def get_data():
-    day = ['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс'] #тут типа дни недели
+    day = ['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс'] #тут типА дни недели
 
     x1 = np.arange(1, 8) - 0.2
     x2 = np.arange(1, 8) + 0.2
@@ -41,8 +41,8 @@ def get_data():
         config.data.append(int(datafile1.decode('utf-8')))
         config.HOUR_CTR += 1
 
-    data2 = datafile2.decode('utf-8').split('@')  # типа среднее за каждый день недели
-    data3 = datafile3.decode('utf-8').split('@')  # типа среднее за каждый день прошлой недели
+    data2 = datafile2.decode('utf-8').split('@')  # типА среднее за каждый день недели
+    data3 = datafile3.decode('utf-8').split('@')  # типА среднее за каждый день прошлой недели
 
     del data2[len(data2) - 1]
     data2 = list(map(int, data2))

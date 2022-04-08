@@ -3,14 +3,14 @@ import time
 
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-server.bind(("127.0.0.1", 1265))
+server.bind(("127.0.0.1", 1266))
 
 server.listen(2)
 user1, adres1 = server.accept()
 user2, adres2 = server.accept()
 in_use = []
 file = open('nuber_data.txt', 'r')  # тут будет файл со всесеми номерами (потом он будет scv)
-line = file.read().split('\n')  # получаем все серийники (нужноподключить pndas)
+line = file.read().split('\n')  # получаем все серийники
 
 while True:
     data_user1 = user1.recv(1024)   # принимаем режим

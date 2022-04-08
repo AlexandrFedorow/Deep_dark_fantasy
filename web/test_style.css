@@ -84,7 +84,7 @@ table{
     background-color: #ffffff;
     overflow: scroll;
     text-align: center;
-    bottom: 15px;
+    bottom: 20px;
     /* надо накинуть скролинг */
 }
 
@@ -115,7 +115,7 @@ table{
   cursor: pointer;
 }
 #plot0{
-  margin-top: 95px;
+  margin-top: 100px;
 }
 
 .b-popup{

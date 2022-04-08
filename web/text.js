@@ -72,6 +72,7 @@ function create_device(){//походу запускать эту функцию
   div4.className = 'text';
   div5.className = 'light';
   div4.id = ctr+'t';
+  div5.id = ctr+'light';
   div.id = ctr;
   div.setAttribute('onclick', 'choose_devace(this)')
   main.appendChild(div);
@@ -118,5 +119,7 @@ async function refresh(){
       plot3.src = "static/plot3.png";
     }
 }
+
+
 
 PopUpHide();
