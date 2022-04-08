@@ -14,12 +14,11 @@ line = file.read().split('\n')  # получаем все серийники
 
 while True:
     data_user1 = user1.recv(1024)   # принимаем режим
-    #print(data_user1.decode('utf-8'))
 
     if data_user1.decode('utf-8') == 'check':
         device_name = user1.recv(1024)
 
-        if device_name.decode('utf-8') in line and not(device_name.decode('utf-8') in in_use):   # тут будет нормальная проверка номера
+        if device_name.decode('utf-8') in line and not(device_name.decode('utf-8') in in_use):
             in_use.append(device_name.decode('utf-8'))
             user1.send('1'.encode('utf-8'))  # возвращаем 1 если проверка прошла
         else:

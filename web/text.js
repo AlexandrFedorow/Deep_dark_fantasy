@@ -9,7 +9,6 @@ function PopUpShow(){ //Функция отображения PopUp
 }
 
 
-    //Функция скрытия PopUp
 async function PopUpHide(){
     if (ctr > -1){
         var s_number = document.getElementById('s-number').value;
@@ -20,7 +19,7 @@ async function PopUpHide(){
             create_device();
         }
         else{
-          alert('пососи')  // НЕ ЗАБУДЬ УБРАТЬ
+          alert('Error')
           ctr--;
         }
     }
@@ -33,7 +32,7 @@ function PopUpExit(){
     $("#popup1").hide();
 }
 
-function create_device(){//походу запускать эту функцию придеся через python
+function create_device(){
   var br = document.createElement('br');
 
   var main = document.querySelector('div.bok');
@@ -80,7 +79,7 @@ function create_device(){//походу запускать эту функцию
 }
 
 
-function choose_devace(obj){//эта функция для отображения информации о дивайсе
+function choose_devace(obj){
   refresh();
   for(var i = 0; i<4; i++){
     var b = document.getElementById('plot'+i);
@@ -119,7 +118,6 @@ async function refresh(){
       plot3.src = "static/plot3.png";
     }
 }
-
 
 
 PopUpHide();
