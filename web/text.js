@@ -32,6 +32,14 @@ function PopUpExit(){
     $("#popup1").hide();
 }
 
+function truncateString(str, num) {
+  if (str.length > num) {
+    return str.slice(0, num) + "...";
+  } else {
+    return str;
+  }
+}
+
 function create_device(){
   var br = document.createElement('br');
 
@@ -49,7 +57,10 @@ function create_device(){
   var div4 = document.createElement('div');
   var div5 = document.createElement('div');
 
-  var text = document.createTextNode(device_name);
+  var d_text = truncateString(device_name, 6);
+
+  var text = document.createTextNode(d_text);
+
 
   div.appendChild(div1);
   div.appendChild(div2);

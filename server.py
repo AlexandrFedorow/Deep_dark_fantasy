@@ -3,7 +3,7 @@ import time
 
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-server.bind(("127.0.0.1", 1266))
+server.bind(("127.0.0.1", 1265))
 
 server.listen(2)
 user1, adres1 = server.accept()

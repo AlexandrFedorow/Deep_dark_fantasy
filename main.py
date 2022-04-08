@@ -8,7 +8,7 @@ import config
 
 eel.init('web')
 clien = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-clien.connect(("127.0.0.1", 1266))
+clien.connect(("127.0.0.1", 1265))
 
 
 @eel.expose

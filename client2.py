@@ -3,7 +3,7 @@ from random import randint
 import time
 
 clien = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-clien.connect(("127.0.0.1", 1266))
+clien.connect(("127.0.0.1", 1265))
 
 data1 = [randint(1, 500) for i in range(7)]#типА средние за неделю
 data3 = [randint(1, 500) for i in range(7)]#типА средние за пошлую неделю
